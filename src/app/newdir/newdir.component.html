@@ -1,0 +1,7 @@
+<div *ngIf="NotFade">
+<h2 *ngFor="let item of places">{{item}}</h2>
+</div>
+
+<button (click)="fade()">
+    click to hide
+</button>

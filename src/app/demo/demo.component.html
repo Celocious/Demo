@@ -1,0 +1,53 @@
+<div>
+<h1>Welcome</h1>
+<div *ngIf="x>100 ; else main">
+  <h1>The {{x}} is greater than 100</h1>
+</div>
+<ng-template #main>
+    <h1>The {{x}} is less than 1000</h1>
+</ng-template>
+
+<div *ngFor = "let item of y">
+    <h2>The name of the {{item.name}}</h2>
+    <h3>The age is {{item.name}}</h3>
+    </div>
+
+<button (click) = "hideList()">Click to get User</button>
+
+<div *ngIf="inVisible">
+    <h2 *ngFor = "let Cont of User">The name of the user is {{Cont.name}}.</h2>
+</div>
+</div>
+
+<div>
+    <h1></h1>
+</div>
+
+<input type="text" placeholder = "any..." [(ngModel)] ="data" >
+
+<h3>{{data}}</h3>
+
+<select [(ngModel)] = "brand">
+    <option value="1">Puma</option>
+    <option value="2">Nike</option>
+    <option value="3">Adidas</option>
+    <option value="4">Guucci</option>
+    <option value="5">Bata</option>
+</select>
+
+<div [ngSwitch] = "brand">
+<h1 *ngSwitchCase="1">This is puma brand</h1>
+<h1 *ngSwitchCase="2">This is Nike brand</h1>
+<h1 *ngSwitchCase="3">This is Adidas brand</h1>
+<h1 *ngSwitchCase="4">This is Guucci brand</h1>
+<h1 *ngSwitchCase="5">This is Bata brand</h1>
+<h1 *ngSwitchDefault>Please Seletc any one brand</h1>
+</div>
+
+<h1 appNewdir>This is custom directive</h1>
+
+<h1>{{Msg.toUpperCase()}}</h1>
+<h1 appNewdir>{{Name}}</h1>
+
+
+

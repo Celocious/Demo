@@ -1,0 +1,48 @@
+<p>prac works!</p>
+<h1>Hello {{Intro}}</h1>
+
+<div *ngIf="num > 100; else main">
+ <h3>{{num}} is greater than 100 </h3>
+</div>
+ <ng-template #main>
+    <h3>{{num}} is less than 100</h3>
+ </ng-template>
+
+ <button (click)="hideData()">
+Click here to hide data
+ </button>
+
+ <div *ngIf="inVisible">
+<h2  *ngFor="let item of myArr">The {{item.name}} is {{item.age}} years old.</h2>
+ </div>
+<div>
+    <h1>Two way data binding</h1>
+    <input type="text" placeholder="write anything"
+    [(ngModel)] = "data">
+    <h2>{{data}}</h2>
+</div>
+
+<select [(ngModel)] = "brand">
+<option value="1">Puma</option>
+<option value="2">Nike</option>
+<option value="3">Adidas</option>
+<option value="4">Se7en</option>
+</select>
+
+<div [ngSwitch] = "brand">
+<h2 *ngSwitchCase="1">You have Selected Puma brand</h2>
+<h2 *ngSwitchCase="2">You have Selected Nike brand</h2>
+<h2 *ngSwitchCase="3">You have Selected Adidas brand</h2>
+<h2 *ngSwitchCase="4">You have Selected Se7en brand</h2>
+<h2 *ngSwitchDefault>Please, Select any brand</h2>
+</div>
+
+<div>
+    <h2 appPrac>The background color is from custom directive</h2>
+</div>
+
+<div>
+    <h2 appPrac>{{details}}</h2>
+    <h2 *ngFor="let det of source">
+ {{det.name}} is located in {{det.address.city}}</h2>
+</div>
