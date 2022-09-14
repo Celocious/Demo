@@ -1,5 +1,5 @@
 <h2>{{title}}</h2>
-<form  [formGroup]="loginFM">
+<form  [formGroup]="loginForm" (ngSubmit) = "onSubmit()">
     <input type="text" placeholder="name.." 
     formControlName="user">
     <br>
