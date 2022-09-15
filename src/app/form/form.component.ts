@@ -9,6 +9,8 @@ import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 export class FormComponent implements OnInit {
   title:string = "Login Page";
   loginForm: FormGroup | any;
+  data:any;
+  show:boolean = false;
 
 
   constructor(private fb: FormBuilder) { }
@@ -35,6 +37,10 @@ export class FormComponent implements OnInit {
   
   get password(){
     return this.loginForm.get(`password`)
+  }
+
+  chang(){
+    this.show = !this.show;
   }
 
 }

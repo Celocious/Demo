@@ -21,5 +21,10 @@
             password Field is must
     </span>
     <br>
-    <button [disabled] = "loginForm.invalid">login</button>
+    <button [disabled] = "loginForm.invalid" (click)="chang()">
+        login</button>
 </form>
+<div *ngIf="show">
+    <h2>Form Value: {{loginForm.value | json}}</h2>
+    <h2>Form Status: {{loginForm.status}}</h2>
+</div>
